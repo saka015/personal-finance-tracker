@@ -1,0 +1,258 @@
+/* Global Styles */
+:root {
+  /* Color Scheme */
+  --primary-color: #007bff;
+  --primary-hover-color: #0056b3;
+  --text-color: #333;
+  --background-color: #2D2D34;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  /* Spacing and Sizing */
+  --padding: 16px;
+  --border-radius: 12px;
+  --font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Profile Page Container */
+.profile-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 2rem;
+  background: #2D2D34;
+  border-radius: var(--border-radius);
+  box-shadow: 8px 8px 16px var(--shadow-color); /* Shadow on the right and bottom */
+}
+
+/* Profile Header */
+.profile-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-header .profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-header .profile-pic:hover {
+  transform: scale(1.05);
+}
+
+.profile-header h2 {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  color: #D1D3DA;
+}
+
+.profile-header p {
+  margin: 0.5rem 0;
+  color: #D1D3DA;
+}
+
+/* Button Styling */
+button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-3px);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+form h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+form label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #D1D3DA;
+}
+
+form input,
+form textarea {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  background-color: #333;
+  color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  font-family: inherit;
+  outline: none;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+  background-color: #444;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #B0B3B8;
+  opacity: 1;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+form input:focus::placeholder,
+form textarea:focus::placeholder {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Modernizing Textarea for Multi-line Input */
+form textarea {
+  resize: vertical; /* Allows vertical resize of the textarea */
+  min-height: 120px;
+}
+
+/* Profile Statistics */
+.profile-stats,
+.social-links,
+.account-settings {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  margin-bottom: 1.5rem;
+}
+
+.profile-stats h3,
+.social-links h3,
+.account-settings h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.profile-stats p,
+.social-links p {
+  margin: 0.5rem 0;
+}
+
+/* Social Links */
+.social-links input {
+  width: 100%;
+}
+
+/* Account Settings */
+.account-settings label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.account-settings input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Delete Account */
+.delete-account {
+  display: flex;
+  justify-content: flex-end; /* Align the delete button to the right */
+  margin-top: 1rem;
+}
+
+.delete-account button {
+  background-color: #dc3545;
+  margin-left: 20px;
+}
+
+.delete-account button:hover {
+  background-color: #c82333;
+}
+
+/* Button Row (Edit and Delete side by side) */
+.button-row {
+  display: flex;
+  justify-content: space-between; /* Space between the buttons */
+  gap: 1rem;
+}
+
+.button-row .edit-btn {
+  margin-right: auto; /* Push the edit button to the left */
+}
+
+.button-row .delete-btn {
+  margin-left: auto; /* Push the delete button to the right */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .profile-page {
+    padding: 1rem;
+  }
+
+  .profile-header .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  form button,
+  button {
+    width: 100%;
+  }
+
+  /* Adjust button layout for small screens */
+  .button-row {
+    flex-direction: column;
+  }
+
+  .button-row button {
+    width: 100%; /* Stack the buttons vertically on smaller screens */
+  }
+}
